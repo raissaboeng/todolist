@@ -1,7 +1,7 @@
+const tasks = [];
 const addButton = document.querySelector(".addButton");
 let input = document.querySelector("#newTask");
 const list = document.querySelector("#list");
-
 
 const editButton = document.querySelector(".editButton");
 const removeButton = document.querySelector(".removeButton");
@@ -15,7 +15,6 @@ class item{
     createDiv(itemName){
         //create li element
         let itemBox = document.createElement("li");
-        
 
         //create input checkbox task
         let checkbox = document.createElement("input");
@@ -58,7 +57,6 @@ class item{
         itemBox.appendChild(buttonEdit);
         itemBox.appendChild(buttonRemove);
         list.appendChild(itemBox);
-       
     }
 
     editTask(item){
@@ -67,11 +65,14 @@ class item{
         let label = item.querySelector("label");
         let containsClass = item.classList.contains("editMode");
 
+        let pos = tasks.indexOf(label.innerText);
+
         //If class of the parent is .editmode
         if(containsClass){
             //switch to .editmode
             //label becomes the inputs value.
             label.innerText = editInput.value;
+            tasks[pos] = editInput.value;
         }else{
             editInput.value = label.innerText;
         }
@@ -79,23 +80,28 @@ class item{
         //toggle .editmode on the parent.
         item.classList.toggle("editMode");
     }
-        
-
+    
     removeTask(item){
-       list.removeChild(item);
+        let itemRemove = item.querySelector("label").innerText;
+        let pos = tasks.indexOf(itemRemove);
+        tasks.splice(pos, 1);
+        
+        list.removeChild(item);
     }
 }
-
 
 function createTask(){
     console.log("Create new task...")
     if(input.value != ""){
-        new item(input.value);
-
-        input.value = "";
+        if(tasks.indexOf(input.value)< 0){
+            new item(input.value);
+            tasks.push(input.value);
+            input.value = "";
+        }else{
+            alert("Esta tarefa já existe!");
+        }
     }else{
         alert("Tarefa vazia!");
     }
-
 }
-addButton.onclick=createTask;
+addButton.onclick = createTask;

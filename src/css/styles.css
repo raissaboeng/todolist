@@ -109,6 +109,11 @@ li{
     margin-right: 0.5rem;
 }
 
+input[type=checkbox]:checked ~ label {
+    text-decoration: line-through;
+    color: gray;
+ }
+
 /* Edit Task */
 ul li input[type=text] {
     display:none;
