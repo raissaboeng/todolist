@@ -19,6 +19,7 @@ $ git clone https://github.com/raissaboeng/todolist.git
 Acesse a pasta do projeto no computador e execute o arquivo index.html no navegador.
 
 ### :bulb: Melhorias
-- [ ] Ao marcar uma tarefa como concluída, deixar o label riscado;
+- [x] Ao marcar uma tarefa como concluída, deixar o label riscado;
+- [x] Ao tentar adicionar alguma tarefa, verificar se ela já existe na lista e caso tenha não adicionar;
 - [ ] Conectar a aplicação a um banco de dados para não perder as tarefas ao atualizar ou fechar a página;
 - [ ] Colocar animação de fundo;
