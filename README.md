@@ -23,3 +23,7 @@ Acesse a pasta do projeto no computador e execute o arquivo index.html no navega
 - [x] Ao tentar adicionar alguma tarefa, verificar se ela já existe na lista e caso tenha não adicionar;
 - [ ] Conectar a aplicação a um banco de dados para não perder as tarefas ao atualizar ou fechar a página;
 - [ ] Colocar animação de fundo;
+
+
+
+<p align="center">Com 💜 por Raissa Boeng</p>
